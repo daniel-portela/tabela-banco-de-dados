@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Tabelas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="menu">
+            <h5>TABELAS</h5>
+            <ul>
+                <li><button class="btn" onclick="showTableWithFilters('fornecedores')">Fornecedores</button></li>
+                <li><button class="btn" onclick="showTableWithFilters('clientes')">Clientes</button></li>
+                <li><button class="btn" onclick="showTableWithFilters('transacoes')">Transações</button></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="filters" id="fornecedores-filters" style="display: none;">
+                <input type="text" placeholder="Fornecedores">
+                <button class="btn">Filtrar</button>
+            </div>
+            
+            <div class="filters" id="clientes-filters" style="display: none;">
+                <input type="text" placeholder="Nome do Cliente">
+                <input type="text" placeholder="CPF">
+                <button class="btn">Filtrar</button>
+            </div>
+           
+            <div class="filters" id="transacoes-filters" style="display: none;">
+                <input type="date" placeholder="Data">
+                <button class="btn">Filtrar</button>
+            </div>
+
+            <div class="table-view">
+                <div id="fornecedores-table" style="display:none;">Conteúdo da tabela de Fornecedores</div>
+                <div id="clientes-table" style="display:none;">Conteúdo da tabela de Clientes</div>
+                <div id="transacoes-table" style="display:none;">Conteúdo da tabela de Transações</div>
+            </div>
+
+            <div class="sql-console" id="sql-console" style="display: none;">
+                <textarea placeholder="Digite sua consulta SQL aqui..."></textarea>
+                <button class="btn" onclick="executeSQL()">Executar</button>
+                <button class="close-btn" onclick="toggleConsole()">X</button>
+                <button class="btn clear-btn" onclick="clearQuery()">Limpar Consulta</button>
+            </div>
+
+            <div class="sql-results" id="sql-results" style="display: none;">
+                <div class="resize-handle"></div>
+            </div>
+
+            <button class="btn terminal-btn" onclick="toggleConsole()">Terminal de Consulta</button>
+            <button class="btn print-btn">Exportar Arquivo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+    </html>

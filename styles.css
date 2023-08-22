@@ -1,0 +1,231 @@
+
+body {
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: 100vh;
+}
+
+.menu {
+    width: 250px;
+    flex: 0.5;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    cursor: ew-resize;
+    position: relative;
+}
+
+.menu h5 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: block;
+}
+
+.btn:hover {
+    background-color: #d0d0d0;
+}
+
+.content {
+    flex: 3.5;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filters input,
+.filters button {
+    height: 28px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    flex: none;
+}
+
+.filters button {
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto;
+}
+
+.filters button:hover {
+    background-color: #d0d0d0;
+}
+
+.sql-console {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(70% - 100% / 25);
+    height: 40vh;
+    background-color: rgba(245, 245, 245, 0.95);
+    z-index: 100;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    cursor: move;
+}
+
+
+.sql-results {
+    position: absolute;
+    top: 55vh;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    background-color: hsl(0, 0%, 97%);
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.sql-console textarea {
+    width: 100%;
+    height: 80%;
+    margin-bottom: 10px;
+    resize: none;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.sql-console button {
+    width: auto;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sql-console button:hover {
+    background-color: #e0e0e0;
+}
+
+.terminal-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: auto;
+}
+
+.print-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: none;
+    border: none;
+    font-size: 15px;
+    color: #f44336;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.clear-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-menu-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.menu.collapsed {
+    flex: 0;
+    overflow: hidden;
+    width: 0;
+    transition: width 0.3s;
+}
+
+.no-select {
+    user-select: none;
+}
+
+.resize-handle {
+    position: absolute;
+    top: 0;
+    bottom: calc(100% - 10px);
+    left: 0;
+    right: 0;
+    height: 5px;
+    cursor: ns-resize;
+    z-index: 101;
+    background-color: #ccc;
+}
+
+.resize-handle-horizontal {
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+    cursor: ew-resize;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
